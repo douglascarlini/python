@@ -33,7 +33,7 @@ class API(object):
     # ROUTES
 
     @staticmethod
-    @jwt_required # JWT PROTECTED ROUTE
+    @jwt_required(optional=False) # JWT PROTECTED ROUTE
     def api_secure(req):
 
         try: return { "user": get_jwt_identity() }
